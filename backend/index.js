@@ -15,9 +15,12 @@ const port = process.env.PORT || 5000;
 app.use(express.json())
 app.use(cookieParser());
 app.use(cors({
-    origin : "http://localhost:5173" ,
-    credentials : true
-}))
+    origin: [
+        "http://localhost:5173",
+        "https://gemini-virtual-assistant-frontend.onrender.com"
+    ],
+    credentials: true
+}));
 
 app.use("/api/auth",authRouter)
 app.use("/api/user",userRouter)
