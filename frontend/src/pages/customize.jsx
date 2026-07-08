@@ -95,11 +95,33 @@ const Customize = () => {
       } else {
         formData.append("imageUrl", selectedImage || userData.assistantImage);
       }
-      const result = await axios.post(
-        `${serverUrl}/api/user/update`,
-        formData,
-        { withCredentials: true },
-      );
+      // const result = await axios.post(
+      //   `${serverUrl}/api/user/update`,
+      //   formData,
+      //   { withCredentials: true },
+      // );
+
+
+
+      const token = localStorage.getItem("token"); // or however you store it
+
+        const result = await axios.post(
+          `${serverUrl}/api/user/update`,
+          formData,
+          {
+            withCredentials: true, // keep this if backend uses cookies
+            headers: {
+              Authorization: `Bearer ${token}`, // add this line
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+
+
+
+
+
       setUserData(result.data);
       navigate("/");
     } catch (error) {
