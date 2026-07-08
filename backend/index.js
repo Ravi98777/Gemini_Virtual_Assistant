@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://gemini-virtual-assistant-frontend.onrender.com"
+       " https://gemini-virtual-assistant-frontend.onrender.com"
     ],
     credentials: true
 }));
