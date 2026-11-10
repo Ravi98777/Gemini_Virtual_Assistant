@@ -376,7 +376,7 @@ CLOUDINARY_API_SECRET=
 Current frontend code uses this backend URL:
 
 ```text
-https://gemini-virtual-assistant-backend.onrender.com
+ https://gemini-virtual-assistant-frontend.onrender.com
 ```
 
 For local development, update `serverUrl` in:
